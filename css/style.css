@@ -1,0 +1,236 @@
+:root{
+    --primario: #9C27B0;
+    --primariooscuro: #89119D;
+    --segundario: #FFCE00;
+    --segundarioclaro: rgb(233,287,2);
+    --blanco: #fff;
+    --negro: #000;
+
+    --fuenteprincipal:'Staatliches', cursive;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+/* Globales */
+body {
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+}
+h1,h2,h3 {
+    text-align: center;
+    color: var(--segundario);
+    font-family: var(--fuenteprincipal);
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3.2rem;
+}
+h3 {
+    font-size: 2.2rem;
+}
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/* header */
+.header {
+    display: flex;
+    justify-content: center;
+}
+.header__logo {
+    margin: 3rem 0;
+}
+/* Footer */
+.footer {
+    background-color: var(--primariooscuro);
+    padding: .5rem 0;
+    margin-top: 2rem;
+}
+.footer__texto {
+    text-align: center;
+    font-family: var(--fuenteprincipal);
+    font-size: 2rem;
+}
+/* Navegacion */
+.navegacion {
+    display: flex;
+    background-color: var(--primariooscuro);
+    padding: 1rem 0;
+    justify-content:center;
+    gap: 2rem;
+}
+.navegacion__enlace {
+    font-family: var(--fuenteprincipal);
+    color: var(--blanco);
+    font-size: 2.3rem;
+}
+.navegacion__enlace--activo,
+.navegacion__enlace:hover {
+    color: var(--segundario);
+}
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.8rem;
+}
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* Producto */
+
+.producto {
+    background-color: var(--primariooscuro);
+    padding: 1rem;
+}
+.producto__nombre {
+    font-size: 3rem
+
+}
+.producto__precio {
+    font-size: 2.5rem;
+    color: var(--segundario);
+}
+.producto__nombre,
+.producto__precio {
+    font-family: var(--fuenteprincipal);
+    text-align: center;
+    margin: .8rem 0;
+    line-height: 1.1;
+}
+
+/* Graficos */
+
+.grafico {
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+.grafico--camisa {
+    background-image: url(../img/grafico1.jpg);
+    grid-row: 2 / 3;
+}
+.grafico--node {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9;
+}
+@media (min-width: 768px) {
+    .grafico--node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+/* Nosotros */
+.nosotros {
+    display: grid; 
+    grid-template-rows: repeat(2, auto);
+}
+
+@media (min-width: 768px) {
+    .nosotros {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+.nosotros__imagen {
+    grid-row: 1 / 2;
+}
+
+@media (min-width: 768px) {
+    .nosotros__imagen {
+        grid-column:  2 / 3;
+    }
+}
+
+/* Iconos */
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+@media (min-width: 768px) {
+    .bloques {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+.bloque__titulo {
+    margin: 0;
+}
+
+.bloque {
+    text-align: center;
+}
+
+/* Pagina del producto */
+
+@media (min-width: 768px) {
+    .camiseta{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.formulario {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+@media (min-width: 768px) {
+    .formulario {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+.formulario__campo {
+    background-color: transparent;
+    border-radius: 1rem;
+    border: 1rem solid var(--primariooscuro);
+    color: var(--blanco);
+    padding: 2rem;
+    font-size: 2rem;
+    font-family:Arial, Helvetica, sans-serif;
+    appearance: none;
+}
+.formulario__opcion {
+    color: var(--negro);
+}
+.formulario__submit {
+    background-color: var(--segundario);
+    font-family: var(--fuenteprincipal);
+    border: none;
+    font-size: 2rem;
+    padding: 2rem;
+    grid-column: 1 / 3;
+    transition: background-color .3s ease;
+    transition: font-size .3s ease;
+}
+.formulario__submit:hover {
+    font-size: 2.2rem;
+    cursor: pointer;
+    background-color: var(--segundarioclaro);
+}
